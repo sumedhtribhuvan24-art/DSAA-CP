@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Task Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Smart Productivity Dashboard</p>
+                <h1>Manage your daily work with a cleaner, sharper task flow.</h1>
+                <p class="hero-text">
+                    Add tasks quickly, stay focused on what matters, and undo changes instantly when plans shift.
+                </p>
+            </div>
+            <div class="hero-card">
+                <p class="hero-card-label">Live Status</p>
+                <h2 id="taskCount">0 Tasks</h2>
+                <p class="hero-card-text">Your updates appear instantly in a polished workspace.</p>
+            </div>
+        </header>
+
+        <main class="task-panel">
+            <div class="panel-header">
+                <div>
+                    <p class="section-tag">Task Workspace</p>
+                    <h2>Task Manager</h2>
+                </div>
+                <p class="panel-note">Core features are implemented, and advanced algorithms are demonstrated with real task data.</p>
+            </div>
+
+            <div class="task-controls">
+                <input type="text" id="taskInput" placeholder="Task name">
+                <input type="text" id="categoryInput" placeholder="Category">
+                <input type="text" id="locationInput" placeholder="Location">
+                <input type="number" id="durationInput" min="1" placeholder="Minutes">
+                <select id="priorityInput">
+                    <option value="5">Priority 5 - High</option>
+                    <option value="4">Priority 4</option>
+                    <option value="3" selected>Priority 3 - Medium</option>
+                    <option value="2">Priority 2</option>
+                    <option value="1">Priority 1 - Low</option>
+                </select>
+                <button class="primary-btn" onclick="addTask()">Add Task</button>
+                <button class="secondary-btn" onclick="undo()">Undo</button>
+                <button class="ghost-btn" onclick="redo()">Redo</button>
+            </div>
+
+            <ul id="taskList" class="task-list"></ul>
+        </main>
+
+        <section class="concept-panel">
+            <div class="panel-header">
+                <div>
+                    <p class="section-tag">Algorithm Lab</p>
+                    <h2>Run DSA logic and show the output</h2>
+                </div>
+                <p class="panel-note">Use these controls during demo to prove the algorithms are working.</p>
+            </div>
+
+            <div class="algo-controls">
+                <input type="text" id="searchInput" placeholder="Trie prefix, e.g. Pr">
+                <select id="startLocation">
+                    <option value="Home">Start: Home</option>
+                    <option value="Library">Start: Library</option>
+                    <option value="Lab">Start: Lab</option>
+                    <option value="Market">Start: Market</option>
+                    <option value="Faculty Block">Start: Faculty Block</option>
+                    <option value="Gym">Start: Gym</option>
+                </select>
+                <select id="endLocation">
+                    <option value="Faculty Block">End: Faculty Block</option>
+                    <option value="Library">End: Library</option>
+                    <option value="Lab">End: Lab</option>
+                    <option value="Market">End: Market</option>
+                    <option value="Gym">End: Gym</option>
+                    <option value="Home">End: Home</option>
+                </select>
+                <input type="number" id="timeLimitInput" min="30" step="30" value="180" placeholder="Available minutes">
+                <button class="algo-btn" onclick="runHeapDemo()">Run Heap</button>
+                <button class="algo-btn" onclick="runTrieDemo()">Run Trie</button>
+                <button class="algo-btn" onclick="runDijkstra()">Run Dijkstra</button>
+                <button class="algo-btn" onclick="runKnapsack()">Run Knapsack</button>
+            </div>
+
+            <div id="resultBox" class="result-box">
+                <p class="result-title">Algorithm Output</p>
+                <p class="result-empty">Run any algorithm to see the result here.</p>
+            </div>
+        </section>
+
+        <section class="concept-panel">
+            <div class="panel-header">
+                <div>
+                    <p class="section-tag">DSA Concepts</p>
+                    <h2>How this project uses real data structures</h2>
+                </div>
+            </div>
+
+            <div class="concept-grid">
+                <article class="concept-card">
+                    <h3>Stack</h3>
+                    <p>Undo and redo task changes.</p>
+                    <span>Example: restore a deleted task.</span>
+                </article>
+                <article class="concept-card">
+                    <h3>Heap</h3>
+                    <p>Priority scheduling for urgent work.</p>
+                    <span>Example: submit report before watching a movie.</span>
+                </article>
+                <article class="concept-card">
+                    <h3>HashMap</h3>
+                    <p>Fast lookup using task ID.</p>
+                    <span>Example: open task 103 instantly.</span>
+                </article>
+                <article class="concept-card">
+                    <h3>Trie</h3>
+                    <p>Prefix-based search suggestions.</p>
+                    <span>Example: typing "Pr" suggests "Prepare presentation".</span>
+                </article>
+                <article class="concept-card">
+                    <h3>Graph</h3>
+                    <p>Shortest path between task locations.</p>
+                    <span>Example: Home to Library to Lab in minimum distance.</span>
+                </article>
+                <article class="concept-card">
+                    <h3>Knapsack</h3>
+                    <p>Select best tasks in limited time.</p>
+                    <span>Example: choose the most valuable work in 3 hours.</span>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
